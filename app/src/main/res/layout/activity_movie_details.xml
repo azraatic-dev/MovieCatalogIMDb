@@ -61,6 +61,21 @@
             android:text="Movie description"
             android:textSize="16sp" />
 
+        <TextView
+            android:id="@+id/textActorsTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Actors"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewActors"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp" />
+
     </LinearLayout>
 
 </ScrollView>
