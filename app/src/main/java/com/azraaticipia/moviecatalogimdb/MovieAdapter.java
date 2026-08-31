@@ -21,6 +21,11 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         this.movies = movies;
     }
 
+    public void updateList(ArrayList<Movie> newMovies) {
+        movies = newMovies;
+        notifyDataSetChanged();
+    }
+
     @NonNull
     @Override
     public MovieViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -46,11 +51,18 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
 
         holder.itemView.setOnClickListener(v -> {
 
-            Intent intent = new Intent(v.getContext(), MovieDetailsActivity.class);
+            holder.itemView.setOnClickListener(view -> {
 
-            intent.putExtra("moviePosition", position);
+                Intent intent = new Intent(v.getContext(), MovieDetailsActivity.class);
 
-            v.getContext().startActivity(intent);
+                intent.putExtra("title", movie.getTitle());
+                intent.putExtra("genre", movie.getGenre());
+                intent.putExtra("rating", movie.getRating());
+                intent.putExtra("description", movie.getDescription());
+                intent.putExtra("posterResId", movie.getPosterResId());
+
+                v.getContext().startActivity(intent);
+            });
         });
     }
 

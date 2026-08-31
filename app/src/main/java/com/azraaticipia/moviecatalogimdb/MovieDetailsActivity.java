@@ -5,11 +5,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import java.util.ArrayList;
-
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
 
 public class MovieDetailsActivity extends AppCompatActivity {
 
@@ -33,31 +32,45 @@ public class MovieDetailsActivity extends AppCompatActivity {
         textDetailsDescription = findViewById(R.id.textDetailsDescription);
         recyclerViewActors = findViewById(R.id.recyclerViewActors);
 
-        int moviePosition = getIntent().getIntExtra("moviePosition", 0);
+        String title = getIntent().getStringExtra("title");
+        String genre = getIntent().getStringExtra("genre");
+        float rating = getIntent().getFloatExtra("rating", 0);
+        String description = getIntent().getStringExtra("description");
+        int posterResId = getIntent().getIntExtra("posterResId", 0);
+
+        textDetailsTitle.setText(title);
+        textDetailsGenre.setText(genre);
+        textDetailsRating.setText("Rating: " + rating);
+        textDetailsDescription.setText(description);
+
+        if (posterResId != 0) {
+            imageDetailsPoster.setImageResource(posterResId);
+        }
 
         ArrayList<Movie> movies = MovieData.getMovies();
 
-        Movie movie = movies.get(moviePosition);
+        Movie selectedMovie = null;
 
-        actorAdapter = new ActorAdapter(movie.getActors());
+        for (Movie movie : movies) {
+            if (movie.getTitle().equals(title)) {
+                selectedMovie = movie;
+                break;
+            }
+        }
 
-        recyclerViewActors.setLayoutManager(
-                new LinearLayoutManager(
-                        this,
-                        LinearLayoutManager.HORIZONTAL,
-                        false
-                )
-        );
+        if (selectedMovie != null) {
 
-        recyclerViewActors.setAdapter(actorAdapter);
+            actorAdapter = new ActorAdapter(selectedMovie.getActors());
 
-        textDetailsTitle.setText(movie.getTitle());
-        textDetailsGenre.setText(movie.getGenre());
-        textDetailsRating.setText("Rating: " + movie.getRating());
-        textDetailsDescription.setText(movie.getDescription());
+            recyclerViewActors.setLayoutManager(
+                    new LinearLayoutManager(
+                            this,
+                            LinearLayoutManager.HORIZONTAL,
+                            false
+                    )
+            );
 
-        if (movie.getPosterResId() != 0) {
-            imageDetailsPoster.setImageResource(movie.getPosterResId());
+            recyclerViewActors.setAdapter(actorAdapter);
         }
     }
 }
