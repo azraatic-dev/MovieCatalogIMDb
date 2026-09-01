@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import android.widget.Button;
 
 public class MovieDetailsActivity extends AppCompatActivity {
 
@@ -19,6 +20,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
     private TextView textDetailsDescription;
     private RecyclerView recyclerViewActors;
     private ActorAdapter actorAdapter;
+    private Button buttonFavorite;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
         textDetailsRating = findViewById(R.id.textDetailsRating);
         textDetailsDescription = findViewById(R.id.textDetailsDescription);
         recyclerViewActors = findViewById(R.id.recyclerViewActors);
+        buttonFavorite = findViewById(R.id.buttonFavorite);
 
         String title = getIntent().getStringExtra("title");
         String genre = getIntent().getStringExtra("genre");
@@ -60,7 +63,26 @@ public class MovieDetailsActivity extends AppCompatActivity {
 
         if (selectedMovie != null) {
 
-            actorAdapter = new ActorAdapter(selectedMovie.getActors());
+            Movie finalSelectedMovie = selectedMovie;
+
+            if (finalSelectedMovie.isFavorite()) {
+                buttonFavorite.setText("Remove from Favorites");
+            } else {
+                buttonFavorite.setText("Add to Favorites");
+            }
+
+            buttonFavorite.setOnClickListener(view -> {
+
+                finalSelectedMovie.setFavorite(!finalSelectedMovie.isFavorite());
+
+                if (finalSelectedMovie.isFavorite()) {
+                    buttonFavorite.setText("Remove from Favorites");
+                } else {
+                    buttonFavorite.setText("Add to Favorites");
+                }
+            });
+
+            actorAdapter = new ActorAdapter(finalSelectedMovie.getActors());
 
             recyclerViewActors.setLayoutManager(
                     new LinearLayoutManager(

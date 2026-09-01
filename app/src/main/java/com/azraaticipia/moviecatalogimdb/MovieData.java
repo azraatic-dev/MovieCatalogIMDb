@@ -3,10 +3,15 @@ package com.azraaticipia.moviecatalogimdb;
 import java.util.ArrayList;
 
 public class MovieData {
+        private static final ArrayList<Movie> movies = createMovies();
 
-    public static ArrayList<Movie> getMovies() {
+        public static ArrayList<Movie> getMovies() {
+            return movies;
+        }
 
-        ArrayList<Movie> movies = new ArrayList<>();
+        private static ArrayList<Movie> createMovies() {
+
+            ArrayList<Movie> movies = new ArrayList<>();
 
         // INCEPTION
         ArrayList<Actor> inceptionActors = new ArrayList<>();

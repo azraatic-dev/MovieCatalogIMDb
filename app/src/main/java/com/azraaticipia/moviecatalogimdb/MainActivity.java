@@ -11,12 +11,16 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;
 
+import android.content.Intent;
+import android.widget.Button;
+
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerViewMovies;
     private MovieAdapter movieAdapter;
     private ArrayList<Movie> movieList;
     private EditText editTextSearch;
+    private Button buttonFavorites;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerViewMovies = findViewById(R.id.recyclerViewMovies);
         editTextSearch = findViewById(R.id.editTextSearch);
+        buttonFavorites = findViewById(R.id.buttonFavorites);
 
         movieList = MovieData.getMovies();
 
@@ -32,6 +37,13 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerViewMovies.setLayoutManager(new LinearLayoutManager(this));
         recyclerViewMovies.setAdapter(movieAdapter);
+
+        buttonFavorites.setOnClickListener(view -> {
+
+            Intent intent = new Intent(MainActivity.this, FavoritesActivity.class);
+            startActivity(intent);
+
+        });
 
         editTextSearch.addTextChangedListener(new TextWatcher() {
 
