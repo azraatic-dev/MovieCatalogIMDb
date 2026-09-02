@@ -8,7 +8,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="16dp"
+        android:background="@color/background_dark">
 
         <ImageView
             android:id="@+id/imageDetailsPoster"
@@ -25,6 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Movie title"
+            android:textColor="@color/text_primary"
             android:textSize="26sp"
             android:textStyle="bold" />
 
@@ -34,6 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Genre"
+            android:textColor="@color/text_secondary"
             android:textSize="18sp" />
 
         <TextView
@@ -41,15 +44,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Rating: 8.8"
+            android:text="Rating: "
+            android:textColor="@color/cinema_yellow"
+            android:textStyle="bold"
             android:textSize="18sp" />
 
         <Button
             android:id="@+id/buttonFavorite"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="Add to Favorites" />
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:text="Add to Favorites"
+            android:textColor="@color/cinema_yellow"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:backgroundTint="@color/surface_blue"
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp" />
 
         <TextView
             android:id="@+id/textDescriptionTitle"
@@ -57,6 +69,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:text="Description"
+            android:textColor="@color/text_primary"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -66,6 +79,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Movie description"
+            android:textColor="@color/text_secondary"
             android:textSize="16sp" />
 
         <TextView
@@ -74,6 +88,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:text="Actors"
+            android:textColor="@color/text_primary"
             android:textSize="20sp"
             android:textStyle="bold" />
 

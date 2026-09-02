@@ -10,9 +10,8 @@ import java.util.ArrayList;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;
-
 import android.content.Intent;
-import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private MovieAdapter movieAdapter;
     private ArrayList<Movie> movieList;
     private EditText editTextSearch;
-    private Button buttonFavorites;
+    private TextView buttonFavorites;;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
