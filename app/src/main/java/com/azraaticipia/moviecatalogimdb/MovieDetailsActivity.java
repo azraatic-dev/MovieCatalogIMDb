@@ -1,6 +1,7 @@
 package com.azraaticipia.moviecatalogimdb;
 
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -9,7 +10,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-import android.widget.Button;
 
 public class MovieDetailsActivity extends AppCompatActivity {
 
@@ -18,9 +18,14 @@ public class MovieDetailsActivity extends AppCompatActivity {
     private TextView textDetailsGenre;
     private TextView textDetailsRating;
     private TextView textDetailsDescription;
+    private TextView textUserRating;
+
     private RecyclerView recyclerViewActors;
     private ActorAdapter actorAdapter;
+
     private Button buttonFavorite;
+    private Button buttonLike;
+    private Button buttonDislike;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +37,13 @@ public class MovieDetailsActivity extends AppCompatActivity {
         textDetailsGenre = findViewById(R.id.textDetailsGenre);
         textDetailsRating = findViewById(R.id.textDetailsRating);
         textDetailsDescription = findViewById(R.id.textDetailsDescription);
+        textUserRating = findViewById(R.id.textUserRating);
+
         recyclerViewActors = findViewById(R.id.recyclerViewActors);
+
         buttonFavorite = findViewById(R.id.buttonFavorite);
+        buttonLike = findViewById(R.id.buttonLike);
+        buttonDislike = findViewById(R.id.buttonDislike);
 
         String title = getIntent().getStringExtra("title");
         String genre = getIntent().getStringExtra("genre");
@@ -65,6 +75,8 @@ public class MovieDetailsActivity extends AppCompatActivity {
 
             Movie finalSelectedMovie = selectedMovie;
 
+            // FAVORITES
+
             if (finalSelectedMovie.isFavorite()) {
                 buttonFavorite.setText("Remove from Favorites");
             } else {
@@ -73,7 +85,9 @@ public class MovieDetailsActivity extends AppCompatActivity {
 
             buttonFavorite.setOnClickListener(view -> {
 
-                finalSelectedMovie.setFavorite(!finalSelectedMovie.isFavorite());
+                finalSelectedMovie.setFavorite(
+                        !finalSelectedMovie.isFavorite()
+                );
 
                 if (finalSelectedMovie.isFavorite()) {
                     buttonFavorite.setText("Remove from Favorites");
@@ -82,7 +96,29 @@ public class MovieDetailsActivity extends AppCompatActivity {
                 }
             });
 
-            actorAdapter = new ActorAdapter(finalSelectedMovie.getActors());
+            // LIKE / DISLIKE
+
+            updateUserRatingText(finalSelectedMovie);
+
+            buttonLike.setOnClickListener(view -> {
+
+                finalSelectedMovie.setUserRating(1);
+
+                updateUserRatingText(finalSelectedMovie);
+            });
+
+            buttonDislike.setOnClickListener(view -> {
+
+                finalSelectedMovie.setUserRating(-1);
+
+                updateUserRatingText(finalSelectedMovie);
+            });
+
+            // ACTORS
+
+            actorAdapter = new ActorAdapter(
+                    finalSelectedMovie.getActors()
+            );
 
             recyclerViewActors.setLayoutManager(
                     new LinearLayoutManager(
@@ -93,6 +129,24 @@ public class MovieDetailsActivity extends AppCompatActivity {
             );
 
             recyclerViewActors.setAdapter(actorAdapter);
+        }
+    }
+
+    private void updateUserRatingText(Movie movie) {
+
+        if (movie.getUserRating() == 1) {
+
+            textUserRating.setText("Your rating: 👍 Liked");
+
+        } else if (movie.getUserRating() == -1) {
+
+            textUserRating.setText("Your rating: 👎 Disliked");
+
+        } else {
+
+            textUserRating.setText(
+                    "You haven't rated this movie yet."
+            );
         }
     }
 }

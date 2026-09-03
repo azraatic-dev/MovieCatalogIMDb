@@ -11,6 +11,7 @@ public class Movie {
     private int posterResId;
     private ArrayList<Actor> actors;
     private boolean favorite;
+    private int userRating;
 
     public Movie(String title, String genre, float rating,
                  String description, int posterResId,
@@ -23,6 +24,7 @@ public class Movie {
         this.posterResId = posterResId;
         this.actors = actors;
         this.favorite = false;
+        this.userRating = 0;
     }
 
     public String getTitle() {
@@ -59,5 +61,13 @@ public class Movie {
 
     public void setFavorite(boolean favorite) {
         this.favorite = favorite;
+    }
+
+    public int getUserRating() {
+        return userRating;
+    }
+
+    public void setUserRating(int userRating) {
+        this.userRating = userRating;
     }
 }

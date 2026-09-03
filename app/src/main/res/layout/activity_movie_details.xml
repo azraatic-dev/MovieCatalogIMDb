@@ -63,6 +63,59 @@
             android:paddingStart="18dp"
             android:paddingEnd="18dp" />
 
+        <!-- USER RATING -->
+
+        <TextView
+            android:id="@+id/textRateTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Rate this movie"
+            android:textColor="@color/text_primary"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonLike"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                android:text="👍 Like"
+                android:textAllCaps="false"
+                android:textColor="@color/text_primary"
+                android:backgroundTint="@color/surface_blue" />
+
+            <Button
+                android:id="@+id/buttonDislike"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp"
+                android:text="👎 Dislike"
+                android:textAllCaps="false"
+                android:textColor="@color/text_primary"
+                android:backgroundTint="@color/surface_blue" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textUserRating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="You haven't rated this movie yet."
+            android:textColor="@color/text_secondary"
+            android:textSize="15sp" />
+
+        <!-- DESCRIPTION -->
+
         <TextView
             android:id="@+id/textDescriptionTitle"
             android:layout_width="match_parent"
@@ -81,6 +134,8 @@
             android:text="Movie description"
             android:textColor="@color/text_secondary"
             android:textSize="16sp" />
+
+        <!-- ACTORS -->
 
         <TextView
             android:id="@+id/textActorsTitle"

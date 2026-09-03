@@ -27,7 +27,7 @@ public class MovieData {
                 8.8f,
                 "A skilled thief enters people's dreams to steal their secrets. " +
                         "He is given a chance to erase his past by planting an idea in someone's mind.",
-                0,
+                R.drawable.poster_inception,
                 inceptionActors
         ));
 
@@ -45,7 +45,7 @@ public class MovieData {
                 8.7f,
                 "A group of astronauts travels through a wormhole in search of a new home for humanity. " +
                         "Their journey challenges the limits of time, space and human connection.",
-                0,
+                R.drawable.poster_interstellar,
                 interstellarActors
         ));
 
@@ -63,7 +63,7 @@ public class MovieData {
                 9.0f,
                 "Batman faces a criminal mastermind known as the Joker. " +
                         "The conflict pushes Gotham City and its heroes to their limits.",
-                0,
+                R.drawable.poster_thedarkknight,
                 darkKnightActors
         ));
 
@@ -81,7 +81,7 @@ public class MovieData {
                 7.9f,
                 "Two young passengers from different social classes fall in love aboard the Titanic. " +
                         "Their relationship is tested when disaster strikes the ship.",
-                0,
+                R.drawable.poster_titanic,
                 titanicActors
         ));
 
@@ -99,7 +99,7 @@ public class MovieData {
                 8.5f,
                 "A Roman general is betrayed and forced into slavery. " +
                         "He rises as a gladiator while seeking justice against the emperor who destroyed his family.",
-                0,
+                R.drawable.poster_gladiator,
                 gladiatorActors
         ));
 
@@ -117,7 +117,7 @@ public class MovieData {
                 7.9f,
                 "A former Marine travels to the distant world of Pandora. " +
                         "There he becomes involved in the conflict between humans and the native Na'vi people.",
-                0,
+                R.drawable.poster_avatar,
                 avatarActors
         ));
 
@@ -135,7 +135,7 @@ public class MovieData {
                 8.4f,
                 "A struggling entertainer faces rejection and isolation in Gotham City. " +
                         "His experiences gradually transform him into the criminal figure known as the Joker.",
-                0,
+                R.drawable.poster_joker,
                 jokerActors
         ));
 
@@ -153,7 +153,7 @@ public class MovieData {
                 8.7f,
                 "A computer hacker discovers that the world around him is a simulated reality. " +
                         "He joins a group of rebels fighting against the machines that control humanity.",
-                0,
+                R.drawable.poster_thematrix,
                 matrixActors
         ));
 
@@ -171,7 +171,7 @@ public class MovieData {
                 8.8f,
                 "A kind-hearted man experiences several major moments in American history. " +
                         "Throughout his life, he remains devoted to the woman he has loved since childhood.",
-                0,
+                R.drawable.poster_forrestgump,
                 forrestGumpActors
         ));
 
@@ -189,7 +189,7 @@ public class MovieData {
                 9.3f,
                 "A banker is sentenced to prison for a crime he says he did not commit. " +
                         "Over the years, he forms an important friendship and quietly holds on to hope.",
-                0,
+                R.drawable.poster_theshawshankredemption,
                 shawshankActors
         ));
 
@@ -207,7 +207,7 @@ public class MovieData {
                 9.2f,
                 "The aging leader of a powerful crime family prepares to pass control to the next generation. " +
                         "His reluctant son gradually becomes deeply involved in the family business.",
-                0,
+                R.drawable.poster_thegodfather,
                 godfatherActors
         ));
 
@@ -225,7 +225,7 @@ public class MovieData {
                 8.9f,
                 "Several connected stories follow criminals, hitmen and other characters in Los Angeles. " +
                         "Their choices lead to unexpected and often violent consequences.",
-                0,
+                R.drawable.poster_pulpfiction,
                 pulpFictionActors
         ));
 
@@ -243,7 +243,7 @@ public class MovieData {
                 8.8f,
                 "An unhappy office worker forms an unusual friendship with a charismatic stranger. " +
                         "Together they create an underground fight club that grows into something much larger.",
-                0,
+                R.drawable.poster_fightclub,
                 fightClubActors
         ));
 
@@ -261,7 +261,7 @@ public class MovieData {
                 8.9f,
                 "A young hobbit is given the dangerous task of carrying a powerful ring. " +
                         "He begins a journey with a group of companions who must protect him and the fate of Middle-earth.",
-                0,
+                R.drawable.poster_lordoftherings,
                 fellowshipActors
         ));
 
@@ -279,7 +279,7 @@ public class MovieData {
                 9.0f,
                 "The final battle for Middle-earth begins as its armies prepare to face Sauron. " +
                         "Meanwhile, Frodo and Sam continue their dangerous journey toward Mount Doom.",
-                0,
+                R.drawable.poster_lordoftheringsking,
                 returnKingActors
         ));
 
@@ -297,7 +297,7 @@ public class MovieData {
                 8.6f,
                 "A young FBI trainee seeks the help of an imprisoned psychiatrist and serial killer. " +
                         "She hopes his insight will help her capture another dangerous murderer.",
-                0,
+                R.drawable.poster_thesilenceofthelambs,
                 silenceActors
         ));
 
@@ -315,7 +315,7 @@ public class MovieData {
                 8.6f,
                 "A group of soldiers is sent behind enemy lines during World War II. " +
                         "Their mission is to find and bring home a paratrooper whose brothers have been killed.",
-                0,
+                R.drawable.poster_savingprivateryan,
                 savingRyanActors
         ));
 
@@ -333,7 +333,7 @@ public class MovieData {
                 8.6f,
                 "A prison guard meets a death-row inmate with an extraordinary gift. " +
                         "The experience forces him to question justice, compassion and the events happening around him.",
-                0,
+                R.drawable.poster_thegreenmile,
                 greenMileActors
         ));
 
@@ -351,7 +351,7 @@ public class MovieData {
                 8.5f,
                 "A struggling family gradually becomes employed by a wealthy household. " +
                         "Their plan seems successful until unexpected secrets begin to surface.",
-                0,
+                R.drawable.poster_parasite,
                 parasiteActors
         ));
 
@@ -369,7 +369,7 @@ public class MovieData {
                 8.5f,
                 "A young drummer enters an elite music conservatory and wants to become one of the best. " +
                         "His demanding instructor pushes him beyond his physical and emotional limits.",
-                0,
+                R.drawable.poster_whiplash,
                 whiplashActors
         ));
 
